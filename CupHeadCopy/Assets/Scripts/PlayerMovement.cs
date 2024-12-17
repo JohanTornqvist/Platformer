@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 public class playerMovement : MonoBehaviour
 {
     Vector2 moveInput;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     Rigidbody2D playerSaveRb;
     public playerShooting playerShooting;
     public ColliderControler platformToggle;
@@ -17,6 +17,7 @@ public class playerMovement : MonoBehaviour
     private bool timerTogggle = false;
     [SerializeField] Transform player;
     [SerializeField] Transform playerSave;
+    public int health = 3;
     [SerializeField] Transform ground;
 
     [Header("Movement Settings:")]
@@ -75,12 +76,17 @@ public class playerMovement : MonoBehaviour
             canDip = false;
             rb.AddForce(rb.transform.up * dipPower, ForceMode2D.Impulse);
             timerTogggle = true;
+            playerShooting.canGrapple = false;
         }
     }
 
     private void FixedUpdate()
     {
         canJump = rb.IsTouching(jumpFilter);
+        if (rb.IsTouching(jumpFilter))
+        {
+            playerShooting.canGrapple = true;
+        }
         canDip = rb.IsTouching(platformFilter);
     }
 
@@ -100,6 +106,7 @@ public class playerMovement : MonoBehaviour
             if(dipTimer <= 0)
             {
                 timerTogggle = false;
+                playerShooting.canGrapple = true;
                 dipTimer = 0.03f;
                 playerCollider.enabled = true;
             }

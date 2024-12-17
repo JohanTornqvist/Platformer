@@ -144,7 +144,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -278,7 +278,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009425998, y: -0.03213101}
+  m_Offset: {x: 0.009425998, y: -0.015720338}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -289,7 +289,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.328238, y: 0.43321455}
+  m_Size: {x: 1.328238, y: 0.46603596}
   m_EdgeRadius: 0
 --- !u!114 &3544033702636439003
 MonoBehaviour:
@@ -305,4 +305,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sword: {fileID: 2174354160301282648}
   triggerCollider: {fileID: 3891149384040794622}
-  turnOnColliders: 0
+  disctanceTriger: 1.01
+  distance: 0

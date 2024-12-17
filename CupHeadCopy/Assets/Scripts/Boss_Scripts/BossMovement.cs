@@ -11,6 +11,7 @@ public class BossMovement : MonoBehaviour
     [SerializeField] float minSpawnTime = 10f;
     [SerializeField] float maxSpawnTime = 20f;
     [SerializeField] float enemySpeed = 2f;
+    public float bosshealth = 3000;
 
     private Vector2 bossPoint; // Target position for the boss to move towards
     private Rigidbody2D rb;
